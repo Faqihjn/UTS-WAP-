@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input 
+        type="text" 
+        id="angka1" 
+        name="Angka1"
+    />
+    <input 
+        type="text" 
+        id="angka2" 
+        name="Angka2"
+    />
+    <button 
+        onclick="Kali()">
+        X
+    </button>
+    <button 
+        onclick="Bagi()">
+        /
+    </button>
+    <button 
+        onclick="Reset()">
+        Reset
+    </button>
+    <ul 
+        id="my-list">
+    </ul>
+
+    <script>
+
+        function Kali() {
+            let input = document.getElementById("angka1").value
+            let input2 = document.getElementById("angka2").value
+            var node = document.createElement("ul"); // Membuat cabang
+            var textnode = document.createTextNode(input * input2); // Memasukkan teks ke cabang
+            node.appendChild(textnode);
+
+            document.getElementById("my-list").appendChild(node)
+            document.getElementById("angka1").value = ""
+            document.getElementById("angka2").value = ""
+        }
+        function Bagi() {
+            let input = document.getElementById("angka1").value
+            let input2 = document.getElementById("angka2").value
+            var node = document.createElement("ul"); // Membuat cabang
+            var textnode = document.createTextNode(input / input2); // Memasukkan teks ke cabang
+            node.appendChild(textnode);
+
+            document.getElementById("my-list").appendChild(node)
+            document.getElementById("angka1").value = ""
+            document.getElementById("angka2").value = ""
+        }
+        function Reset() {
+            //document.removeChild("ul");               #Tidak Work :(
+            document.getElementById("angka1").value = ""
+            document.getElementById("angka2").value = ""
+        }
+    </script>
+
+</body>
+
+</html>
